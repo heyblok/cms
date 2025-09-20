@@ -10,7 +10,9 @@
     "develop": "strapi develop",
     "start": "strapi start",
     "start:production": "NODE_ENV=production strapi start",
-    "strapi": "strapi"
+    "strapi": "strapi",
+    "setup": "node setup-env.js",
+    "seed": "node scripts/seed.js"
   },
   "dependencies": {
     "@strapi/plugin-cloud": "5.23.6",

@@ -1,4 +1,4 @@
-module.exports = [
+module.exports = ({ env }) => [
   'strapi::logger',
   'strapi::errors',
   {
@@ -7,9 +7,23 @@ module.exports = [
       contentSecurityPolicy: {
         useDefaults: true,
         directives: {
-          'connect-src': ["'self'", 'https:'],
-          'img-src': ["'self'", 'data:', 'blob:', 'https://res.cloudinary.com'],
-          'media-src': ["'self'", 'data:', 'blob:', 'https://res.cloudinary.com'],
+          'connect-src': ["'self'", 'https:', 'http://localhost:*'],
+          'img-src': [
+            "'self'", 
+            'data:', 
+            'blob:', 
+            'https://res.cloudinary.com',
+            'https://images.unsplash.com',
+            'https://picsum.photos',
+            `https://${env('STRAPI_CLOUD_MEDIA_URL', 'localhost')}`,
+          ],
+          'media-src': [
+            "'self'", 
+            'data:', 
+            'blob:', 
+            'https://res.cloudinary.com',
+            `https://${env('STRAPI_CLOUD_MEDIA_URL', 'localhost')}`,
+          ],
           upgradeInsecureRequests: null,
         },
       },
@@ -18,7 +32,16 @@ module.exports = [
   {
     name: 'strapi::cors',
     config: {
-      origin: ['http://localhost:3000', 'https://localhost:3000', process.env.FRONTEND_URL].filter(Boolean),
+      origin: [
+        'http://localhost:3000',
+        'https://localhost:3000',
+        'http://localhost:3001',
+        'https://localhost:3001',
+        env('FRONTEND_URL'),
+        env('FRONTEND_URL_PROD'),
+        env('FRONTEND_URL_STAGING'),
+      ].filter(Boolean),
+      credentials: true,
     },
   },
   'strapi::poweredBy',

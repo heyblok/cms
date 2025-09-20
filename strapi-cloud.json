@@ -1,0 +1,19 @@
+{
+  "name": "blok-cms",
+  "version": "1.0.0",
+  "build": {
+    "packageManager": "pnpm",
+    "buildCommand": "pnpm run build:production",
+    "startCommand": "pnpm run start:production",
+    "nodeVersion": "22.x",
+    "environment": {
+      "NODE_ENV": "production",
+      "STRAPI_DISABLE_UPDATE_NOTIFICATION": "true",
+      "STRAPI_HIDE_STARTUP_MESSAGE": "true"
+    }
+  },
+  "deploy": {
+    "branch": "main",
+    "autoDeployment": true
+  }
+}
