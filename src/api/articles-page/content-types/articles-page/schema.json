@@ -1,0 +1,42 @@
+{
+  "kind": "singleType",
+  "collectionName": "articles_page",
+  "info": {
+    "singularName": "articles-page",
+    "pluralName": "articles-pages",
+    "displayName": "Articles Page Settings",
+    "description": "Settings for the articles page including title, subtitle, and tags"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true,
+      "default": "Discover Your Perfect Neighborhood"
+    },
+    "subtitle": {
+      "type": "text",
+      "required": true,
+      "default": "Explore local communities with insider guides covering everything from the best coffee shops and schools to transit options and hidden gems. Find your ideal place to call home."
+    },
+    "tags": {
+      "type": "json",
+      "default": ["Local Guides", "Community Life", "Dining & Shopping", "Schools & Transit"]
+    },
+    "metaTitle": {
+      "type": "string",
+      "default": "Neighborhood Guides & Local Insights | Blok Community Blog"
+    },
+    "metaDescription": {
+      "type": "text",
+      "default": "Discover local neighborhoods with insider guides covering community life, amenities, schools, dining, and everything you need to know about living in your area."
+    },
+    "metaKeywords": {
+      "type": "string",
+      "default": "neighborhood guides, local community, area insights, local amenities, neighborhood reviews, community life, local dining, schools, transportation"
+    }
+  }
+}
