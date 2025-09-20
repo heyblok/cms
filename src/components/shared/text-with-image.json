@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_shared_text_with_images",
+  "info": {
+    "displayName": "Text with Image",
+    "icon": "image",
+    "description": "A text block with an optional image"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "subtitle": {
+      "type": "string"
+    },
+    "body": {
+      "type": "richtext"
+    },
+    "bulletPoints": {
+      "type": "json"
+    },
+    "image": {
+      "allowedTypes": ["images"],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

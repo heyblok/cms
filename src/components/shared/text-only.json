@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_shared_text_only",
+  "info": {
+    "displayName": "Text Only",
+    "icon": "align-left",
+    "description": "A text block with title, subtitle, body, and bullet points"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "subtitle": {
+      "type": "string"
+    },
+    "body": {
+      "type": "richtext"
+    },
+    "note": {
+      "type": "string"
+    },
+    "bulletPoints": {
+      "type": "json"
+    }
+  }
+}

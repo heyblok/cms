@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_shared_images_sections",
+  "info": {
+    "displayName": "Images Section",
+    "icon": "picture",
+    "description": "A section with two images"
+  },
+  "options": {},
+  "attributes": {
+    "image1": {
+      "allowedTypes": ["images"],
+      "type": "media",
+      "multiple": false
+    },
+    "image2": {
+      "allowedTypes": ["images"],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

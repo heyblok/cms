@@ -1,24 +1,24 @@
 {
-  "name": "cms",
+  "name": "blok-cms",
   "version": "0.1.0",
   "private": true,
-  "description": "A Strapi application",
+  "description": "Blok CMS - Dynamic Article Management System",
   "scripts": {
     "build": "strapi build",
-    "console": "strapi console",
+    "build:production": "NODE_ENV=production strapi build",
     "deploy": "strapi deploy",
-    "dev": "strapi develop",
     "develop": "strapi develop",
     "start": "strapi start",
-    "strapi": "strapi",
-    "upgrade": "npx @strapi/upgrade latest",
-    "upgrade:dry": "npx @strapi/upgrade latest --dry"
+    "start:production": "NODE_ENV=production strapi start",
+    "strapi": "strapi"
   },
   "dependencies": {
     "@strapi/plugin-cloud": "5.23.6",
     "@strapi/plugin-users-permissions": "5.23.6",
     "@strapi/strapi": "5.23.6",
     "better-sqlite3": "11.3.0",
+    "fs-extra": "^11.2.0",
+    "mime-types": "^2.1.35",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "react-router-dom": "^6.0.0",
@@ -26,14 +26,14 @@
   },
   "devDependencies": {
     "@types/node": "^20",
-    "@types/react": "^18",
-    "@types/react-dom": "^18",
     "typescript": "^5"
   },
   "engines": {
     "node": ">=18.0.0 <=22.x.x",
-    "npm": ">=6.0.0"
+    "npm": ">=6.0.0",
+    "pnpm": ">=9.0.0"
   },
+  "packageManager": "pnpm@9.15.4",
   "strapi": {
     "uuid": "8d7e99f6-f502-4e89-abd4-ef56509b9442",
     "installId": "f4fe4d1ade37d0556d463eb6d7dc5294e06b0b3ee5ffa82e50046f4c0d782fef"

@@ -1,61 +1,131 @@
-# 🚀 Getting started with Strapi
+# Blok CMS
 
-Strapi comes with a full featured [Command Line Interface](https://docs.strapi.io/dev-docs/cli) (CLI) which lets you scaffold and manage your project in seconds.
+A modern Strapi CMS for dynamic article management with flexible content sections.
 
-### `develop`
+## Features
 
-Start your Strapi application with autoReload enabled. [Learn more](https://docs.strapi.io/dev-docs/cli#strapi-develop)
+- **Dynamic Articles**: Create articles with flexible content sections
+- **Content Components**: Text-only, text-with-image, and images sections
+- **SEO Optimized**: Built-in SEO metadata for each article
+- **API Ready**: RESTful API with slug-based routing
+- **Media Support**: Image upload and management
 
+## Quick Start
+
+### Prerequisites
+
+- Node.js 18+ 
+- pnpm (recommended) or npm
+
+### Installation
+
+1. **Install dependencies:**
+   ```bash
+   pnpm install
+   ```
+
+2. **Create environment file:**
+   ```bash
+   cp .env.example .env
+   ```
+   
+   Then edit `.env` with your configuration.
+
+3. **Start development server:**
+   ```bash
+   pnpm run develop
+   ```
+
+4. **Create admin user:**
+   Visit http://localhost:1337/admin and create your first admin user.
+
+## Environment Variables
+
+Create a `.env` file with the following variables:
+
+```env
+# Database Configuration
+DATABASE_CLIENT=sqlite
+DATABASE_FILENAME=.tmp/data.db
+
+# Server Configuration
+HOST=0.0.0.0
+PORT=1337
+NODE_ENV=development
+
+# Application Keys (Generate random keys)
+APP_KEYS="your_app_key_1,your_app_key_2"
+API_TOKEN_SALT=your_api_token_salt
+ADMIN_JWT_SECRET=your_admin_jwt_secret
+TRANSFER_TOKEN_SALT=your_transfer_token_salt
+JWT_SECRET=your_jwt_secret
+
+# Frontend Configuration (Optional)
+FRONTEND_REVALIDATE_URL=http://localhost:3000
+REVALIDATE_SECRET=your_revalidate_secret
 ```
-npm run develop
-# or
-yarn develop
+
+## API Endpoints
+
+- `GET /api/articles` - List all articles
+- `GET /api/articles/:id` - Get article by ID
+- `GET /api/articles/slug/:slug` - Get article by slug
+- `POST /api/articles` - Create new article
+- `PUT /api/articles/:id` - Update article
+
+## Content Structure
+
+### Article Fields
+
+- **title**: Article title
+- **description**: Short description (160 chars max)
+- **slug**: URL-friendly identifier
+- **cover**: Cover image
+- **content**: Dynamic content sections
+- **seo**: SEO metadata
+- **publishedDate**: Publication date
+- **updatedDate**: Last update date
+
+### Content Components
+
+#### Text Only
+- title, subtitle, body (rich text), note, bullet points
+
+#### Text with Image  
+- title, subtitle, body (rich text), bullet points, image
+
+#### Images Section
+- Two images side by side
+
+## Deployment
+
+### Using pnpm (Recommended)
+
+```bash
+pnpm run build:production
+pnpm run start:production
 ```
 
-### `start`
+### Using npm (Fallback)
 
-Start your Strapi application with autoReload disabled. [Learn more](https://docs.strapi.io/dev-docs/cli#strapi-start)
-
-```
-npm run start
-# or
-yarn start
-```
-
-### `build`
-
-Build your admin panel. [Learn more](https://docs.strapi.io/dev-docs/cli#strapi-build)
-
-```
+```bash
 npm run build
-# or
-yarn build
+npm run start
 ```
 
-## ⚙️ Deployment
+## Development
 
-Strapi gives you many possible deployment options for your project including [Strapi Cloud](https://cloud.strapi.io). Browse the [deployment section of the documentation](https://docs.strapi.io/dev-docs/deployment) to find the best solution for your use case.
+```bash
+# Start in development mode
+pnpm run develop
 
+# Build for production
+pnpm run build:production
+
+# Start production server
+pnpm run start:production
 ```
-yarn strapi deploy
-```
 
-## 📚 Learn more
+## License
 
-- [Resource center](https://strapi.io/resource-center) - Strapi resource center.
-- [Strapi documentation](https://docs.strapi.io) - Official Strapi documentation.
-- [Strapi tutorials](https://strapi.io/tutorials) - List of tutorials made by the core team and the community.
-- [Strapi blog](https://strapi.io/blog) - Official Strapi blog containing articles made by the Strapi team and the community.
-- [Changelog](https://strapi.io/changelog) - Find out about the Strapi product updates, new features and general improvements.
-
-Feel free to check out the [Strapi GitHub repository](https://github.com/strapi/strapi). Your feedback and contributions are welcome!
-
-## ✨ Community
-
-- [Discord](https://discord.strapi.io) - Come chat with the Strapi community including the core team.
-- [Forum](https://forum.strapi.io/) - Place to discuss, ask questions and find answers, show your Strapi project and get feedback or just talk with other Community members.
-- [Awesome Strapi](https://github.com/strapi/awesome-strapi) - A curated list of awesome things related to Strapi.
-
----
-
-<sub>🤫 Psst! [Strapi is hiring](https://strapi.io/careers).</sub>
+MIT
