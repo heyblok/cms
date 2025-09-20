@@ -1,5 +1,11 @@
 module.exports = ({ env }) => ({
-  
+  // Configure deep populate plugin for Strapi v5
+  'strapi-v5-plugin-populate-deep': {
+    enabled: true,
+    config: {
+      defaultDepth: 5, // Maximum depth for populate=deep
+    },
+  },
   
   // Configure other plugins
   'users-permissions': {
