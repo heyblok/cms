@@ -12,21 +12,26 @@
     "start:production": "NODE_ENV=production strapi start",
     "strapi": "strapi",
     "setup": "node setup-env.js",
-    "seed": "node scripts/seed.js"
+    "seed": "node scripts/seed.js",
+    "seed-db": "node scripts/seed-database.js",
+    "seed-hosted": "node scripts/seed-hosted.js",
+    "upload-images": "node scripts/upload-images.js",
+    "upload-images-hosted": "node scripts/upload-images.js --hosted"
   },
   "dependencies": {
     "@strapi/plugin-cloud": "5.23.6",
     "@strapi/plugin-users-permissions": "5.23.6",
     "@strapi/strapi": "5.23.6",
     "better-sqlite3": "11.3.0",
+    "form-data": "^4.0.4",
     "fs-extra": "^11.2.0",
     "mime-types": "^2.1.35",
+    "node-fetch": "^3.3.2",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "react-router-dom": "^6.0.0",
     "styled-components": "^6.0.0"
   },
-  "devDependencies": {},
   "engines": {
     "node": ">=18.0.0 <=22.x.x",
     "npm": ">=6.0.0",
