@@ -7,6 +7,18 @@ module.exports = ({ env }) => [
       contentSecurityPolicy: {
         useDefaults: true,
         directives: {
+          'script-src': ['https://cdn.ckeditor.com'],
+          'connect-src': ['https://proxy-event.ckeditor.com']
+        },
+      },
+    },
+  },
+  {
+    name: 'strapi::security',
+    config: {
+      contentSecurityPolicy: {
+        useDefaults: true,
+        directives: {
           'connect-src': ["'self'", 'https:', 'http://localhost:*'],
           'img-src': [
             "'self'", 
@@ -16,6 +28,7 @@ module.exports = ({ env }) => [
             'https://images.unsplash.com',
             'https://picsum.photos',
             `https://${env('STRAPI_CLOUD_MEDIA_URL', 'localhost')}`,
+
           ],
           'media-src': [
             "'self'", 

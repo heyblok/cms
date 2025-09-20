@@ -41,7 +41,13 @@ export interface SharedTextOnly extends Struct.ComponentSchema {
     icon: 'align-left';
   };
   attributes: {
-    body: Schema.Attribute.RichText;
+    body: Schema.Attribute.RichText &
+      Schema.Attribute.CustomField<
+        'plugin::ckeditor5.CKEditor',
+        {
+          preset: 'rich';
+        }
+      >;
     note: Schema.Attribute.String;
     subtitle: Schema.Attribute.String;
     title: Schema.Attribute.String;
@@ -56,7 +62,13 @@ export interface SharedTextWithImage extends Struct.ComponentSchema {
     icon: 'image';
   };
   attributes: {
-    body: Schema.Attribute.RichText;
+    body: Schema.Attribute.RichText &
+      Schema.Attribute.CustomField<
+        'plugin::ckeditor5.CKEditor',
+        {
+          preset: 'rich';
+        }
+      >;
     image: Schema.Attribute.Media<'images'>;
     imageAlt: Schema.Attribute.String;
     subtitle: Schema.Attribute.String;
