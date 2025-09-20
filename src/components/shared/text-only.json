@@ -18,9 +18,6 @@
     },
     "note": {
       "type": "string"
-    },
-    "bulletPoints": {
-      "type": "json"
     }
   }
 }

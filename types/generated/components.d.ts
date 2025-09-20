@@ -42,7 +42,6 @@ export interface SharedTextOnly extends Struct.ComponentSchema {
   };
   attributes: {
     body: Schema.Attribute.RichText;
-    bulletPoints: Schema.Attribute.JSON;
     note: Schema.Attribute.String;
     subtitle: Schema.Attribute.String;
     title: Schema.Attribute.String;
@@ -58,8 +57,8 @@ export interface SharedTextWithImage extends Struct.ComponentSchema {
   };
   attributes: {
     body: Schema.Attribute.RichText;
-    bulletPoints: Schema.Attribute.JSON;
     image: Schema.Attribute.Media<'images'>;
+    imageAlt: Schema.Attribute.String;
     subtitle: Schema.Attribute.String;
     title: Schema.Attribute.String;
   };

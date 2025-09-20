@@ -16,13 +16,13 @@
     "body": {
       "type": "richtext"
     },
-    "bulletPoints": {
-      "type": "json"
-    },
     "image": {
       "allowedTypes": ["images"],
       "type": "media",
       "multiple": false
+    },
+    "imageAlt": {
+      "type": "string"
     }
   }
 }
