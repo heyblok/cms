@@ -45,7 +45,7 @@ export interface SharedTextOnly extends Struct.ComponentSchema {
       Schema.Attribute.CustomField<
         'plugin::ckeditor5.CKEditor',
         {
-          preset: 'rich';
+          preset: 'defaultHtml';
         }
       >;
     note: Schema.Attribute.String;
@@ -66,7 +66,7 @@ export interface SharedTextWithImage extends Struct.ComponentSchema {
       Schema.Attribute.CustomField<
         'plugin::ckeditor5.CKEditor',
         {
-          preset: 'rich';
+          preset: 'defaultHtml';
         }
       >;
     image: Schema.Attribute.Media<'images'>;
